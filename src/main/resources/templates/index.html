@@ -196,7 +196,6 @@ $(document).ready(function(){
             <table class="table table-striped table-hover" th:if="${usuarios!=null and !usuarios.empty}">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>           
                         <th>Email</th>
                         <th>Acción</th>
@@ -212,8 +211,8 @@ $(document).ready(function(){
                       <td>
                          
                         <td>
-                            <a th:href="@{/edit/} + ${usuario.id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a th:href="@{/delete(id=${usuario.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            <a th:href="@{/edit/} + ${usuario.id}" class="settings" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xe014;</i></a>
+                            <a th:href="@{/delete(id=${usuario.id})}" class="delete" title="Eliminar" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                         </td>
 
                          
