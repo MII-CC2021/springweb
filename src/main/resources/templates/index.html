@@ -249,19 +249,17 @@ $(document).ready(function(){
                            
                             <a onclick="document.getElementById('id01').style.display='block'"  class="delete" title="Eliminar" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 
-
-  <form class="modal-content"  th:action="@{/delete}" method="post" th:object="${user}">
+<button onclick="document.getElementById('id01').style.display='block'">Open Modal</button>
+                           <div id="id01" class="modal">
+ 
+  <form class="modal-content" action="/action_page.php">
     <div class="container">
       <h1>Delete Account</h1>
-      <p> Seguro quieres borrar este usuario</p>
+      <p>Are you sure you want to delete your account?</p>
     
       <div class="clearfix">
-        
-        
-          <button type="submit" class="cancelbtn">Volver</button>
-           <button type="submit" class="deletebtn">Borrar</button>
-           
-   
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button"  class="deletebtn">Delete</button>
       </div>
     </div>
   </form>
