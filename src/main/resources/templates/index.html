@@ -249,8 +249,8 @@ $(document).ready(function(){
                            
                             <a onclick="document.getElementById('id01').style.display='block'"  class="delete" title="Eliminar" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
 
-<button onclick="document.getElementById('id01').style.display='block'">Open Modal</button>
-                           <div id="id01" class="modal">
+
+<div id="id01" class="modal">
  
   <form class="modal-content">
     <div class="container">
@@ -258,8 +258,8 @@ $(document).ready(function(){
       <p>Are you sure you want to delete your account?</p>
     
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" th:onclick="@{/delete(id=${usuario.id})}" class="deletebtn">Delete</button>
+        <a type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <a type="button" th:href="@{/delete(id=${usuario.id})}" class="deletebtn">Delete</button>
       </div>
     </div>
   </form>
