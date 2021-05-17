@@ -259,7 +259,7 @@ $(document).ready(function(){
     
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" onclick="${usuario.id}" class="deletebtn">Delete</button>
+        <button type="button" th:onclick=@{/edit/} + ${usuario.id}" class="deletebtn">Delete</button>
       </div>
     </div>
   </form>
