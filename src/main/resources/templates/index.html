@@ -252,17 +252,20 @@ $(document).ready(function(){
 <button onclick="document.getElementById('id01').style.display='block'">Open Modal</button>
                            <div id="id01" class="modal">
  
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" th:action="@{/delete}" method="post" th:object="${user}">
+     <input type="hidden" name="id"  th:field="*{id}" /> 
     <div class="container">
       <h1>Delete Account</h1>
       <p>Are you sure you want to delete your account?</p>
     
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
-      </div>
+         <button type="submit" class="deletebtn">Delete</button>
+          <button type="submit" class="cancelbtn">Cancel</button>
+        </div>
     </div>
   </form>
+  
+  
 </div>
 
                            
