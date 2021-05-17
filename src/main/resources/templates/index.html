@@ -215,7 +215,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div class="container">
+<div th:if="${usuarios!=null}" class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
@@ -254,12 +254,12 @@ $(document).ready(function(){
  
   <form class="modal-content">
     <div class="container">
-      <h1>Delete Account</h1>
-      <p>Are you sure you want to delete your account?</p>
+      <h1>Eliminar usuario</h1>
+      <p>Seguro que desea eliminar el usuario?</p>
     
       <div class="clearfix">
-        <a type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <a type="button" th:href="@{/delete(id=${usuario.id})}" class="deletebtn">Delete</button>
+        <a type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+        <a type="button" th:href="@{/delete(id=${usuario.id})}" class="deletebtn" style="padding:10px">Eliminar</button>
       </div>
     </div>
   </form>
