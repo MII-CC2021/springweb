@@ -2,8 +2,11 @@ package edu.cc.examples.springdata.controllers;
 
 import java.util.List;
 
+import edu.cc.examples.springdata.models.Pet;
+
 import edu.cc.examples.springdata.models.User;
 import edu.cc.examples.springdata.services.IUserService;
+import edu.cc.examples.springdata.services.IPetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
-public class UserController {
+public class PetController {
 
 	@Autowired
 	private IPetService petService;
