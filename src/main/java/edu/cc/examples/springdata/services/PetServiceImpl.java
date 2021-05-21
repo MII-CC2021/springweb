@@ -8,42 +8,33 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserServiceImpl implements IPetService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
-    private IPetDao petDao;
+    private IUserDao usuarioDao;
     
     @Override
     @Transactional(readOnly = true)
-    public List<Pet> listPets() {
-        List<Pet> listpets = (List<Pet>) petDao.findAll();
+    public List<User> listadoUsuarios() {
+        List<User> listUsers = (List<User>) usuarioDao.findAll();
         return listUsers;
     }
 
     @Override
     @Transactional
-    public void savePet(Pet pet) {
-        petDao.save(pet);
+    public void guardarUsuario(User usuario) {
+        usuarioDao.save(usuario);
     }
 
     @Override
     @Transactional
-    public void deletePet(Pet pet) {
-        petDao.delete(pet);
+    public void eliminarUsuario(User usuario) {
+        usuarioDao.delete(usuario);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public User findPet(Pet pet) {
-        return petDao.findById(pet.getId()).orElse(null);
+    public User findUsuario(User usuario) {
+        return usuarioDao.findById(usuario.getId()).orElse(null);
     }
-    
-     @Override
-    @Transactional(readOnly = true)
-    public User getUser(Pet pet) {
-        
-        Pet pet = petDao.findById(pet.getId()).orElse(null);
-        return pet.User;
-    }
-}
 }
