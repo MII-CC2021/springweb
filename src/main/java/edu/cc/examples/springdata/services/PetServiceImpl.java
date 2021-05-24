@@ -1,3 +1,5 @@
+
+
 package edu.cc.examples.springdata.services;
 
 import java.util.List;
@@ -8,33 +10,42 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserServiceImpl implements IUserService {
+public class PetServiceImpl implements IPetService {
 
     @Autowired
-    private IUserDao usuarioDao;
+    private IPetDao petDao;
     
     @Override
     @Transactional(readOnly = true)
-    public List<User> listadoUsuarios() {
-        List<User> listUsers = (List<User>) usuarioDao.findAll();
+    public List<Pet> listPets() {
+        List<Pet> listpets = (List<Pet>) petDao.findAll();
         return listUsers;
     }
 
     @Override
     @Transactional
-    public void guardarUsuario(User usuario) {
-        usuarioDao.save(usuario);
+    public void savePet(Pet pet) {
+        petDao.save(pet);
     }
 
     @Override
     @Transactional
-    public void eliminarUsuario(User usuario) {
-        usuarioDao.delete(usuario);
+    public void deletePet(Pet pet) {
+        petDao.delete(pet);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public User findUsuario(User usuario) {
-        return usuarioDao.findById(usuario.getId()).orElse(null);
+    public User findPet(Pet pet) {
+        return petDao.findById(pet.getId()).orElse(null);
     }
+    
+     @Override
+    @Transactional(readOnly = true)
+    public User getUser(Pet pet) {
+        
+        Pet pet = petDao.findById(pet.getId()).orElse(null);
+        return pet.User;
+    }
+}
 }
