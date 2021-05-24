@@ -15,6 +15,6 @@ public interface IPetService {
 	
 	public Pet findPet(Pet pet);
 
-	public User getUser(Pet pet)
+	public User getUser(Pet pet);
 	
 }

@@ -3,12 +3,11 @@ package edu.cc.examples.springdata.models;
 import java.io.Serializable;
 import javax.persistence.*;
 import lombok.Data;
-import User;
 
 @Entity
 @Data
-@Table(name="pets")
-public class Pet implements Serializable {
+@Table(name="usuarios")
+public class User implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
@@ -17,7 +16,6 @@ public class Pet implements Serializable {
 	private Long id;
     
 	private String nombre;
-	private String type;
-	private User user; 
+	private String email;
 	
 }
