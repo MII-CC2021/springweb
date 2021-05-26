@@ -87,7 +87,7 @@ Crea una base de datos, un usuario:
 ```
 sudo -u postgres psql
 postgres=# create database ccdb;
-postgres=# create user admin with encrypted password 'adminpass';
+postgres=# create user admin with encrypted password 'adminPass';
 postgres=# grant all privileges on database ccdb to admin;
 ```
 
@@ -414,9 +414,9 @@ NOTA: Crear las variables de entorno con los valores adecuados:
 
 ```
 export DB_URL=localhost
-export DB_NAME=cc2021DB
+export DB_NAME=ccdb
 export DB_USERNAME=admin
-export DB_PASSWORD=P4ssW0rd
+export DB_PASSWORD=adminPass
 ```
 
 ### Compilar el proyecto
