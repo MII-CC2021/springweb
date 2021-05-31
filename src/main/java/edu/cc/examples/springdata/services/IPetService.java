@@ -2,16 +2,16 @@
 package edu.cc.examples.springdata.services;
 
 import java.util.List;
-import edu.cc.examples.springdata.models.User;
+import edu.cc.examples.springdata.models.Pet;
 
 public interface IUserService {
 
-	public List<User> listadoUsuarios();
+	public List<Pet> listadoUsuarios();
 	
-	public void guardarUsuario(User user);
+	public void guardarUsuario(Pet pet);
 	
-	public void eliminarUsuario(User user);
+	public void eliminarUsuario(Pet pet);
 	
-	public User findUsuario(User user);
+	public Pet findUsuario(Pet pet);
 	
 }
